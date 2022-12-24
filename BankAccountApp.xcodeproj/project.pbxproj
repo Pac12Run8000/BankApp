@@ -99,10 +99,10 @@
 		0949E5F0295518CF00AEA94D /* BankAccountApp */ = {
 			isa = PBXGroup;
 			children = (
+				0949E62229551AB200AEA94D /* Views */,
+				0949E62129551A8100AEA94D /* Viewcontrollers */,
 				0949E5F1295518CF00AEA94D /* AppDelegate.swift */,
 				0949E5F3295518CF00AEA94D /* SceneDelegate.swift */,
-				0949E5F5295518CF00AEA94D /* BankViewController.swift */,
-				0949E5F7295518CF00AEA94D /* Main.storyboard */,
 				0949E5FA295518D100AEA94D /* Assets.xcassets */,
 				0949E5FC295518D100AEA94D /* LaunchScreen.storyboard */,
 				0949E5FF295518D100AEA94D /* Info.plist */,
@@ -125,6 +125,22 @@
 				0949E614295518D200AEA94D /* BankAccountAppUITestsLaunchTests.swift */,
 			);
 			path = BankAccountAppUITests;
+			sourceTree = "<group>";
+		};
+		0949E62129551A8100AEA94D /* Viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				0949E5F5295518CF00AEA94D /* BankViewController.swift */,
+			);
+			path = Viewcontrollers;
+			sourceTree = "<group>";
+		};
+		0949E62229551AB200AEA94D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0949E5F7295518CF00AEA94D /* Main.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
