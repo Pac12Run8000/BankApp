@@ -15,28 +15,37 @@ class BankViewController: UIViewController {
     @IBOutlet weak var checkingTextField: UITextField!
     @IBOutlet weak var savingsTextField: UITextField!
    
-    private var cancellables = Set<AnyCancellable>()
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         checkingTextField.delegate = self
         savingsTextField.delegate = self
-        
     }
 
 
 }
 
+
+
+// MARK:- This is the testfield delegte method that checks to make sure that
 extension BankViewController:UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        let checkingValue = (textField.text! as NSString).replacingCharacters(in: range, with: string)
-        if (Double(checkingValue) == nil) {
+        let digitsAndPeriod = CharacterSet(charactersIn: "0123456789.")
+        if string.rangeOfCharacter(from: digitsAndPeriod.inverted) != nil {
             return false
-        } else {
+        }
+
+        let currentText = textField.text ?? ""
+        let updatedText = (currentText as NSString).replacingCharacters(in: range, with: string)
+        
+        if updatedText.isEmpty || Double(updatedText) != nil {
             return true
+        } else {
+            return false
         }
         
     }
