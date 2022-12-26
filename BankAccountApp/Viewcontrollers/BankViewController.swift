@@ -10,13 +10,9 @@ import Combine
 
 class BankViewController: UIViewController {
     
-    
     @IBOutlet weak var accountTotalLabel: UILabel!
     @IBOutlet weak var checkingTextField: UITextField!
     @IBOutlet weak var savingsTextField: UITextField!
-   
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,13 +38,37 @@ extension BankViewController:UITextFieldDelegate {
         let currentText = textField.text ?? ""
         let updatedText = (currentText as NSString).replacingCharacters(in: range, with: string)
         
+        return fetchSum(updatedText: updatedText, checkingValue: checkingTextField.text ?? "", savingsValue: savingsTextField.text ?? "")
+        
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        
+        if !(textField.text?.contains("."))! {
+            print("Add a decimal point.")
+            return false
+        }
+        return true
+    }
+    
+}
+
+
+extension BankViewController {
+    
+    private func fetchSum(updatedText:String, checkingValue:String, savingsValue:String) -> Bool {
         if updatedText.isEmpty || Double(updatedText) != nil {
+            
+            let value1 = Double(checkingTextField.text ?? "0") ?? 0
+            let value2 = Double(savingsTextField.text ?? "0") ?? 0
+            
+            let total = value1 + value2
+            accountTotalLabel.text = " $\(String(total))"
+            
             return true
         } else {
             return false
         }
-        
     }
-    
 }
 
