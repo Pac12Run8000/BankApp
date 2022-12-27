@@ -16,6 +16,7 @@
 		0949E609295518D200AEA94D /* BankAccountAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0949E608295518D200AEA94D /* BankAccountAppTests.swift */; };
 		0949E613295518D200AEA94D /* BankAccountAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0949E612295518D200AEA94D /* BankAccountAppUITests.swift */; };
 		0949E615295518D200AEA94D /* BankAccountAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0949E614295518D200AEA94D /* BankAccountAppUITestsLaunchTests.swift */; };
+		095A2821295A6305005F8126 /* BankViewControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095A2820295A6305005F8126 /* BankViewControlTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		0949E60E295518D200AEA94D /* BankAccountAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankAccountAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0949E612295518D200AEA94D /* BankAccountAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountAppUITests.swift; sourceTree = "<group>"; };
 		0949E614295518D200AEA94D /* BankAccountAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		095A2820295A6305005F8126 /* BankViewControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewControlTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				0949E608295518D200AEA94D /* BankAccountAppTests.swift */,
+				095A2820295A6305005F8126 /* BankViewControlTests.swift */,
 			);
 			path = BankAccountAppTests;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				095A2821295A6305005F8126 /* BankViewControlTests.swift in Sources */,
 				0949E609295518D200AEA94D /* BankAccountAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

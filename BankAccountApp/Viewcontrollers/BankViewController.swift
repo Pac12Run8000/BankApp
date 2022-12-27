@@ -37,38 +37,32 @@ extension BankViewController:UITextFieldDelegate {
 
         let currentText = textField.text ?? ""
         let updatedText = (currentText as NSString).replacingCharacters(in: range, with: string)
+
         
-        return fetchSum(updatedText: updatedText, checkingValue: checkingTextField.text ?? "", savingsValue: savingsTextField.text ?? "")
+        if updatedText.filter({ $0 == "." }).count > 1 {
+           return false
+        }
+        
+        let roundedValue = fetchSum(checkingValue: checkingTextField.text!, savingsValue: savingsTextField.text!).rounded(.awayFromZero)
+        
+        accountTotalLabel.text = " $\(roundedValue)"
+        
+
+        return true
         
     }
     
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        
-        if !(textField.text?.contains("."))! {
-            print("Add a decimal point.")
-            return false
-        }
-        return true
-    }
+   
     
 }
 
 
 extension BankViewController {
-    
-    private func fetchSum(updatedText:String, checkingValue:String, savingsValue:String) -> Bool {
-        if updatedText.isEmpty || Double(updatedText) != nil {
-            
-            let value1 = Double(checkingTextField.text ?? "0") ?? 0
-            let value2 = Double(savingsTextField.text ?? "0") ?? 0
-            
-            let total = value1 + value2
-            accountTotalLabel.text = " $\(String(total))"
-            
-            return true
-        } else {
-            return false
-        }
+    public func fetchSum(checkingValue:String, savingsValue:String) -> Double {
+        let value1 = Double(checkingTextField.text ?? "0") ?? 0
+        let value2 = Double(savingsTextField.text ?? "0") ?? 0
+        return value1 + value2
     }
+    
 }
 
