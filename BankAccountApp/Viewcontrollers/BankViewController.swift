@@ -43,9 +43,9 @@ extension BankViewController:UITextFieldDelegate {
            return false
         }
         
-        let roundedValue = fetchSum(checkingValue: checkingTextField.text!, savingsValue: savingsTextField.text!).rounded(.awayFromZero)
         
-        accountTotalLabel.text = " $\(roundedValue)"
+        
+        accountTotalLabel.text = " $\(fetchSum(checkingValue: checkingTextField.text!, savingsValue: savingsTextField.text!))"
         
 
         return true
@@ -58,9 +58,10 @@ extension BankViewController:UITextFieldDelegate {
 
 
 extension BankViewController {
+    
     public func fetchSum(checkingValue:String, savingsValue:String) -> Double {
-        let value1 = Double(checkingTextField.text ?? "0") ?? 0
-        let value2 = Double(savingsTextField.text ?? "0") ?? 0
+        let value1 = Double(checkingValue) ?? 0
+        let value2 = Double(savingsValue) ?? 0
         return value1 + value2
     }
     

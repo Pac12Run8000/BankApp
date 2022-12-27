@@ -22,7 +22,7 @@ final class BankViewControlTests: XCTestCase {
     }
     
     func testCalculationOfSum() {
-        XCTAssertTrue(bankVC.fetchSum(updatedText: "0.01", checkingValue: "5.0", savingsValue: "0.2"))
+        XCTAssertEqual(4.60, bankVC.fetchSum(checkingValue: "2.35", savingsValue: "2.25"))
     }
 
     
